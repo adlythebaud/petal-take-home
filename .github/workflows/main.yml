@@ -1,0 +1,17 @@
+name: Publish app to Google App Engine
+  
+  # You may pin to the exact commit or the version.
+  # uses: zxyle/publish-gae-action@647a5e5538829de31fdfaad8de523573c417139f
+uses: 
+    zxyle/publish-gae-action@v2.3.0
+  with:
+    # The service account email which will be used for authentication.
+    service_account_email: petal-take-home@appspot.gserviceaccount.com
+    # The service account key which will be used for authentication.
+    service_account_key: a35e02379b62c96684b30d0aa659814193bafe5a
+    # GAE project id
+    project_id: petal-take-home
+    # GAE variables to be written to the app.yaml file
+    gae_variables: # optional
+    # Path to the app.yml, Defaults to ./app.yml
+    gae_config_path: # optional
