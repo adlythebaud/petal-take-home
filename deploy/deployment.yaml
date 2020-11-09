@@ -1,41 +1,21 @@
----
-apiVersion: "apps/v1"
-kind: "Deployment"
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: "nginx-1"
-  namespace: "default"
-  labels:
-    app: "nginx-1"
+  name: petal-take-home-deployment
 spec:
-  replicas: 3
   selector:
     matchLabels:
-      app: "nginx-1"
+      app: petal-take-home
+      version: v1
+  replicas: 2
   template:
     metadata:
       labels:
-        app: "nginx-1"
-    spec:
-      containers:
-      - name: "petal-take-home-sha256-1"
-        image: "gcr.io/petal-take-home/petal-take-home@sha256:0261687e94442bdf169d205639e89cb27fdadf7dfb5d9116e4f62a7979fa15bd"
----
-apiVersion: "autoscaling/v2beta1"
-kind: "HorizontalPodAutoscaler"
-metadata:
-  name: "nginx-1-hpa-wtng"
-  namespace: "default"
-  labels:
-    app: "nginx-1"
-spec:
-  scaleTargetRef:
-    kind: "Deployment"
-    name: "nginx-1"
-    apiVersion: "apps/v1"
-  minReplicas: 1
-  maxReplicas: 5
-  metrics:
-  - type: "Resource"
-    resource:
-      name: "cpu"
-      targetAverageUtilization: 80
+        app: petal-take-home  
+        version: v1
+    spec:                  
+      containers: 
+      - name: petal-take-home 
+        image: petal-take-home:v1
+        ports:
+        - containerPort: 3000
