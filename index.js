@@ -17,7 +17,7 @@ reverseString = (req, res, next) => {
 
 app.get('/', (req, res) => {
 //   res.send('Hello World!')
-    res.json({data: "hi adly"})
+    res.json({data: "hello world"})
 })
 
 app.post('/v1', reverseString)
