@@ -5,7 +5,7 @@ This is a simple web service written in node js. There are two endpoints, a `/` 
 The purpose of this repo is to show the capabilities of automated deployments to a cloud provider.
 
 ## Set-up
-The app is designed to run on Google Kubernetes Engine (GKE). The setup is supposed to be that the `deploy/deployment.yaml` file is ran when any commit happens. There is a build trigger on the Google Cloud Platform (GCP) that builds whenever a commit happens on any branch.
+The app is designed to run on Google Kubernetes Engine (GKE). The setup is that the `deploy/deployment.yaml` file is ran when any commit happens. There is a build trigger on the Google Cloud Platform (GCP) that builds whenever a commit happens on any branch.
 
 ## Improvements
 The web service itself is supposed to return a reversed string, however I didn't have enough time to add that because I was focused on getting my web service running so that I could host it.
