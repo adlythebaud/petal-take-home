@@ -3,11 +3,16 @@ kind: Deployment
 metadata:
   name: petal-take-home-deployment
 spec:
+  selector:
+    matchLabels:
+      app: petal-take-home
+      version: v1
   replicas: 2
   template:
     metadata:
       labels:
         app: petal-take-home  
+        version: v1
     spec:                  
       containers: 
       - name: petal-take-home 
